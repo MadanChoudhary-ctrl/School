@@ -715,63 +715,57 @@
         background-color: #f1f1f1d8;
     }
     
-    .message .message-content {
-        align-items: flex-start;
-        height: 330px;
-        padding: 0px 40px;
+    .message .message-content .message-left {
+        width: 40%;
     }
     
-    .message .message-content .message-column-left {
-        width: 270px;
+    .message .message-content .message-left .message-image {
         position: relative;
+        width: 320px;
+        height: 350px;
+        z-index: 2;
     }
     
-    .message .message-content .message-column-right {
-        position: absolute;
-        background-color: rgb(202, 202, 202);
-        right: 15%;
-        margin-top: 4%;
-        width: 800px;
-        height: 275px;
-        box-shadow: -5px 0px 0px rgb(196, 196, 13);
+    .message .message-content .message-left img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
     }
     
-    .message-description {
-        margin: 15px;
-        text-align: justify;
+    .message .message-content .message-right {
+        width: 60%;
+        padding: 0px 20px;
     }
     
-    .message-description p {
+    .message .message-content .message-right p {
         font-size: 15px;
         font-weight: 500;
     }
     
-    .message-description h2 {
+    .message .message-content .message-right h2 {
         margin-top: 15px;
         font-weight: 500;
         font-size: 1.2rem;
     }
     
-    .message-description h2 span {
+    .message .message-content .message-right h2 span {
         border-bottom: 3.5px solid black;
     }
     
-    .message-description h1 {
+    .message .message-content .message-right h1 {
         font-weight: 500;
         font-size: 15px;
     }
     
-    .message .message-content .message-column-left .message-image {
-        width: 100%;
-        height: 270px;
-        box-shadow: 0px 0px 7px 7px rgba(128, 123, 123, 0.527);
-    }
-    
-    .message .message-content .message-column-left .message-image img {
+    .message .message-content .message-left .message-image::before {
+        content: "";
+        position: absolute;
+        bottom: -20px;
+        right: -20px;
         width: 100%;
         height: 100%;
-        box-shadow: -5px 0px 0px rgb(196, 196, 13);
-        object-fit: cover;
+        border: 4px solid lightgray;
+        z-index: -1;
     }
     /* contact section styling */
     
@@ -998,6 +992,10 @@
         .mapouter {
             width: 400px;
         }
+        .message .message-content .message-left .message-image {
+            width: 280px;
+            height: 300px;
+        }
     }
     
     @media (max-width: 991px) {
@@ -1079,17 +1077,20 @@
             max-width: 930px;
         }
         .events .events-content .column,
-        .about .about-content .column {
+        .about .about-content .column,
+        .message .message-content .message-column {
             width: 100%;
         }
         .events .events-content .left,
-        .about .about-content .right {
+        .about .about-content .right,
+        .message .message-content .message-left {
             display: flex;
             justify-content: center;
             margin: 0 auto 60px;
         }
         .events .events-content .right,
-        .about .about-content .right {
+        .about .about-content .right,
+        .message .message-content .message-right {
             flex: 100%;
         }
         .services .serv-content .card {
@@ -1224,12 +1225,6 @@
         .testimonial .carousel .card .box::after {
             font-size: 8rem;
         }
-        /* .navbar .menu {
-        padding-top: 25px;
-    }
-    .navbar .menu li a {
-        margin: 15px 0px;
-    } */
         #phone,
         #email {
             margin: 0px 16px !important;
@@ -1263,18 +1258,16 @@
             margin: 0px auto;
             margin-top: 25px;
         }
-        /* .navbar .menu {
-        padding-top: 25px;
-    }
-    .navbar .menu li a {
-        margin: 15px 0px;
-    } */
         #phone,
         #email {
             margin: 0px 4px !important;
         }
         .courses .carousel .card img {
             height: 300px;
+        }
+        .message .message-content .message-left .message-image {
+            width: 250px;
+            height: 280px;
         }
     }
     
@@ -1306,10 +1299,8 @@
             margin-left: 0px !important;
             margin-top: 5px;
         }
-        /* .navbar .menu {
-        padding-top: 65px;
-    }
-    .navbar .menu li a {
-        margin: 15px 0px;
-    } */
+        .message .message-content .message-left .message-image {
+            width: 220px;
+            height: 250px;
+        }
     }
