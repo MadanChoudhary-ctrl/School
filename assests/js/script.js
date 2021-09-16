@@ -107,7 +107,3 @@ document.getElementById('search-cancel').addEventListener('click', () => {
     document.getElementById('search-field').value = "";
     document.querySelector('.search-input').style.display = 'none';
 });
-
-$(function() {
-    $('#popup-text').delay(5000).fadeOut();
-});
